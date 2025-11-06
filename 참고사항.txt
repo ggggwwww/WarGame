@@ -1,0 +1,11 @@
+IP : 192.168.16.50/starmap
+
+ID : cmd
+PW : 1234
+
+메인페이지 : /var/www/html/starmap/index.php
+
+세부페이지 : ../starmap/problem_01.php
+		    
+(~problem_20.php)
+
