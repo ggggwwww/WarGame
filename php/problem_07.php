@@ -253,11 +253,10 @@
         <div id="content-area">
             
         <?php
-        $client_ip = $_SERVER['REMOTE_ADDR'];
+        $client_ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
         if ($client_ip == '10.0.0.8' || $client_ip == '172.34.88.3' || $client_ip == '192.105.40.129') {
         ?>
             <h2>FLAG{C4n_y0u_gu3ss_s3cr3t_0f_0ur_n3tw0rk}</h2>
-            
         <?php
         } else {
         ?>
