@@ -10,13 +10,13 @@ if (!$conn) {
 }
 
 // SELECT 실행
-$query = "SELECT flag FROM problems WHERE id = 6";
+$query = "SELECT flag FROM problems WHERE id =". intval($_POST['problem_num']);
 $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($result);
 
 if ($row && $row['flag'] === $_POST['flag']) {
     // FLAG 맞을 때: UPDATE 실행
-    $update_query = "UPDATE problems SET isSolved = 1 WHERE id = 6";
+    $update_query = "UPDATE problems SET isSolved = 1 WHERE id = " . intval($_POST['problem_num']);
     mysqli_query($conn, $update_query);
 
     echo "<script>alert('Correct flag!'); window.location.href = '/starmap';</script>";

@@ -1,13 +1,12 @@
 <?php
-    $_HTTP['header']
+    header("admin: no");
 ?>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The First Star: Problem 01</title>
+    <title>The Sixth Star: Problem 06</title>
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700;ital@1&display=swap" rel="stylesheet">
     <style>
         /* --- 로고/배경 유지 (이전 버전 스타일) --- */
@@ -249,10 +248,17 @@
 
     <div id="problem-container">
         <h1>Problem 6</h1>
-
+        <h2>Level: Very Easy</h2>
         <div id="content-area">
-          
-            
+            <p>Yes, This is flag <a href="flag6.php"></a></p>
+            <form>
+                <fieldset>
+                    <legend>Conversation</legend>
+                    <p>Security_Manager: Are you admin?</p>
+                    <p>???: yes</p>
+                    <p>Security_Manager: Welcome, admin</p>
+                </fieldset>         
+            </form>
         </div>
 
         <div id="flag-submission">
