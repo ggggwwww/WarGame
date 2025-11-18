@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Eighth Star: Problem 08</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700;ital@1&display=swap" rel="stylesheet">
     <style>
         /* --- 로고/배경 유지 (이전 버전 스타일) --- */
@@ -248,13 +248,106 @@
   
     <div id="problem-container">
         <h1>Problem 8</h1>
+            Maximum threshold for cookies
         
-
         <div id="content-area">
-            
-       
-  
-        </div>
+           <!-- 컨테이너: 상단 바 + 메시지 리스트 + 입력부 목업 -->
+            <div style="max-width:720px; margin:0 auto; display:flex; flex-direction:column; height:100vh; position:relative;">
+            <!-- 상단 바 -->
+            <div style="padding:12px 16px; background:#222; color:#fff; font-weight:600; display:flex; align-items:center; justify-content:space-between;">
+                <span>Our Chat</span>
+                <!-- 프로필 버튼(오른쪽) -->
+                <button id="profile-btn" type="button"
+                style="width:28px; height:28px; border:none; border-radius:50%; background:#4b5563; color:#fff; cursor:pointer;">
+                ●
+                </button>
+            </div>
+
+            <!-- 메시지 영역 -->
+            <div style="flex:1; overflow-y:auto; padding:12px 16px;">
+
+                <div style="display:flex; justify-content:center; margin:10px 0;">
+                <div style="font-size:12px; color:#6b7280; background:#eef2ff; padding:6px 10px; border-radius:10px;">
+                    Administrator 님이 채팅방에 입장했습니다. (13:10)
+                </div>
+                </div>
+
+                <div style="display:flex; justify-content:flex-start; margin:8px 0;">
+                <div style="width:28px; height:28px; border-radius:50%; background:#c7d2fe; margin-right:8px;"></div>
+                <div>
+                    <div style="font-size:12px; color:#6b7280; margin:0 0 2px 2px;">Axel • 13:10</div>
+                    <div style="max-width:70%; background:#ffffff; border-radius:12px; padding:8px 12px; box-shadow:0 1px 2px rgba(0,0,0,0.06);">
+                    어, Administrator가 진짜 들어오셨나요?
+                    </div>
+                </div>
+                </div>
+
+                <div style="display:flex; justify-content:flex-end; margin:8px 0;">
+                <div style="text-align:right;">
+                    <div style="font-size:12px; color:#6b7280; margin:0 2px 2px 0;">Blaze • 13:11</div>
+                    <div style="max-width:70%; background:#d8ebff; border-radius:12px; padding:8px 12px; box-shadow:0 1px 2px rgba(0,0,0,0.06); display:inline-block; text-align:left;">
+                    ?
+                    </div>
+                </div>
+                <div style="width:28px; height:28px; border-radius:50%; background:#bae6fd; margin-left:8px;"></div>
+                </div>
+                <div style="display:flex; justify-content:center; margin:10px 0;">
+                <div style="font-size:12px; color:#374151; background:#fde68a; padding:6px 10px; border-radius:10px;">
+                    Administrator: 네, 잠깐 확인차 들렀습니다.(13:12)
+                </div>
+                </div>
+                <form method="POST" action="message.php" style="margin-top:500px;">
+                    <input type="text" name="message" placeholder="메시지를 입력하세요..." style="width:100%; padding:8px; border:1px solid #d1d5db; border-radius:8px;">
+                    <button type="submit" style="display:none;">Send</button>
+                </form>
+            </div>
+            </div>
+
+            <script>
+            (function(){
+                function toggleProfileCard(show) {
+                var card = document.getElementById('profile-card');
+                if (!card) return;
+                if (typeof show === 'boolean') {
+                    card.style.display = show ? 'block' : 'none';
+                    return;
+                }
+                card.style.display = (card.style.display === 'none' || card.style.display === '') ? 'block' : 'none';
+                }
+
+                function outsideClickHandler(e){
+                var card = document.getElementById('profile-card');
+                var btn = document.getElementById('profile-btn');
+                if (!card || !btn) return;
+                // 카드/버튼 외부 클릭 시 닫기
+                if (!card.contains(e.target) && !btn.contains(e.target)) {
+                    toggleProfileCard(false);
+                }
+                }
+
+                // DOMContentLoaded 시점에 리스너 바인딩
+                if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', bind, { once: true });
+                } else {
+                bind();
+                }
+
+                function bind(){
+                var btn = document.getElementById('profile-btn');
+                if (btn) {
+                    btn.addEventListener('click', function(e){
+                    e.stopPropagation();
+                    toggleProfileCard();
+                    }, false);
+                }
+                document.addEventListener('click', outsideClickHandler, false);
+                // ESC 키로 닫기
+                document.addEventListener('keydown', function(e){
+                    if (e.key === 'Escape') toggleProfileCard(false);
+                }, false);
+                }
+            })();
+            </script>
 
         <div id="flag-submission">
             <form action="submit_flag.php" method="POST">

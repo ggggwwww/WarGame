@@ -18,3 +18,13 @@ INSERT INTO problems (id, title, flag, isSolved) VALUES
 
 INSERT INTO problems (id, title, flag, isSolved) VALUES
 (7, 'problem 7', 'FLAG{C4n_y0u_gu3ss_s3cr3t_0f_0ur_n3tw0rk}', 0);
+
+Insert INTO problems (id, title, flag, isSolved) VALUES
+(8, 'problem 8', 'flag{cookie_threshold_triggered}', 0);
+
+INSERT INTO problems (id, title, flag, isSolved) VALUES
+(9, 'problem 9', 'flag{csrf_email_change_won}', 0);
+
+insert into problems (id, title, flag, isSolved) values
+(10, 'problem 10', 'flag{filter_chain_master}', 0);
+

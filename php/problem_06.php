@@ -250,7 +250,7 @@
         <h1>Problem 6</h1>
         <h2>Level: Very Easy</h2>
         <div id="content-area">
-            <p>Yes, This is flag <a href="flag6.php"></a></p>
+            <p>Yes, This is flag <a href="flag6.php">check flag</a></p>
             <form>
                 <fieldset>
                     <legend>Conversation</legend>
